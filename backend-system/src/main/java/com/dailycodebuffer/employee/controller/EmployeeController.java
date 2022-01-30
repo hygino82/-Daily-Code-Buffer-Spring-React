@@ -17,7 +17,7 @@ import com.dailycodebuffer.employee.services.EmployeeService;
 @RequestMapping("/api/v1")
 public class EmployeeController {
 
-	// Utilisando contrutor ao invés de Autowired para injetar a dependência
+	// Utilisando construtor ao invés de Autowired para injetar a dependência
 	private final EmployeeService employeeService;
 
 	public EmployeeController(EmployeeService employeeService) {
