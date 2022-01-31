@@ -32,16 +32,20 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public List<Employee> getAllEmployees() {
 		List<EmployeeEntity> employeeEntities = employeeRepository.findAll();
-		List<Employee> employees = employeeEntities
-				.stream()
-				.map(emp -> new Employee(
-						emp.getId(), 
-						emp.getFirstName(), 
-						emp.getLastName(), 
-						emp.getEmailId()))
-				//.map(emp->new Employee(emp)) pode ser usado o contrutor da classe que recebe dados da classe mapeada
+		List<Employee> employees = employeeEntities.stream()
+				.map(emp -> new Employee(emp.getId(), emp.getFirstName(), emp.getLastName(), emp.getEmailId()))
+				// .map(emp->new Employee(emp)) pode ser usado o contrutor da classe que recebe
+				// dados da classe mapeada
 				.collect(Collectors.toList());
 		return employees;
+	}
+
+	@Override
+	public boolean deleteEmployee(Long id) {
+		// verificar primeiro se existe o employee
+		EmployeeEntity employee = employeeRepository.findById(id).get();
+		employeeRepository.delete(employee);
+		return true;
 	}
 
 }
