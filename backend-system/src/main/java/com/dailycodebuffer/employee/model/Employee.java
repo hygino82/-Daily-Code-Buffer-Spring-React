@@ -1,5 +1,7 @@
 package com.dailycodebuffer.employee.model;
 
+import com.dailycodebuffer.employee.entity.EmployeeEntity;
+
 //import com.dailycodebuffer.employee.entity.EmployeeEntity;
 
 import lombok.AllArgsConstructor;
@@ -16,10 +18,11 @@ public class Employee {
 	private String lastName;
 	private String emailId;
 
-//	public Employee(EmployeeEntity emp) {
-//		id = emp.getId();
-//		firstName = emp.getFirstName();
-//		lastName = emp.getLastName();
-//		emailId = emp.getEmailId();
-//	}
+	public Employee(EmployeeEntity emp) {
+		//criado para facilitar passar os dados de EmployeeEntity para Employee
+		id = emp.getId();
+		firstName = emp.getFirstName();
+		lastName = emp.getLastName();
+		emailId = emp.getEmailId();
+	}
 }

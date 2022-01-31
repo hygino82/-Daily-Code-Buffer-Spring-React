@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UpdateEmployee from "./components/UpdateEmployee";
 import "./App.css";
 import AddEmployee from "./components/AddEmployee";
 import EmployeeList from "./components/EmployeeList";
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<EmployeeList />}></Route>
           <Route path="/employeeList" element={<EmployeeList />} />
           <Route path="/addEmployee" element={<AddEmployee />} />
+          <Route path="/editEmployee/:id" element={<UpdateEmployee />} />
         </Routes>
       </BrowserRouter>
     </>

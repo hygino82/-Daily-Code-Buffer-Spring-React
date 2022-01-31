@@ -2,10 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Employee = ({ employee, deleteEmployee }) => {
+
   const navigate = useNavigate();
+  
   const editEmployee = (e, id) => {
     e.preventDefault();
-    navigate(`/editEmployee/${id}`);
+    navigate(`/editEmployee/${id}`);//aqui esva o erro da requisição foi esquecido ${id} 
   };
 
   return (
