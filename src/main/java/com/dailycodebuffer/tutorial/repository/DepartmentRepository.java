@@ -8,4 +8,6 @@ import com.dailycodebuffer.tutorial.entity.Department;
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Long> {
 
+	public Department findBydepartmentName(String departmentName);
+	public Department findBydepartmentNameIgnoreCase(String departmentName);
 }
