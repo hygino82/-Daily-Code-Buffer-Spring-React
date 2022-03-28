@@ -1,5 +1,6 @@
 server:
   port: 8080
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -14,4 +15,4 @@ spring:
       ddl-auto: update
     show-sql: true
 welcome:
-  message: Bem vindo a Daily Code Buffer!
+  message: Bem vindo a Daily Code Buffer Dev profile!
